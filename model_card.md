@@ -1,23 +1,38 @@
 # Model Card
 
-See the [example Google model cards](https://modelcards.withgoogle.com/model-reports) for inspiration. 
+The model analysed in this card attempts to classify pictures of monkeys into one of ten species. The model only aims to classify into those ten species, and will not identify a number of monkeys or if multiple species are present.
 
 ## Model Description
 
-**Input:** Describe the inputs of your model 
+**Input:** RGB image 
 
-**Output:** Describe the output(s) of your model
+**Output:** A label of one of 10 monkey species:
 
-**Model Architecture:** Describe the model architecture you’ve used
+- Mantled Howler
+- Patas Monkey
+- Bald Uakari
+- Japanese Macaque
+- Pygmy Marmoset
+- White Headed Capuchin
+- Silvery Marmoset
+- Common Squirrel Monkey
+- Black Headed Night Monkey
+- Nilgiri Langur
+
+**Model Architecture:** CNN tuned for fine-grain classification i.e. to differentiate slight variants on the same type of object.
 
 ## Performance
 
-Give a summary graph or metrics of how the model performs. Remember to include how you are measuring the performance and what data you analysed it on. 
+The model achieved an accuracy of around 75%, with some species achieving a very high idnetification rate of 95%.
+
+![Confusion Matrix](conf.png)
+
+![Performance by species](perf.png)
 
 ## Limitations
 
-Outline the limitations of your model.
-
-## Trade-offs
-
-Outline any trade-offs of your model, such as any circumstances where the model exhibits performance issues. 
+**Multiple Monkeys:** Multiple monkeys being present in a single image will hinder identification.
+**Blurry Images:** Low quality images with blur or motion will have a higher rate of misclassification.
+**High Resolution Images:** The model resizes any image down to a common size
+**Low Resolution Images:** Images of too low a resolution will not be identifiable
+**Other species:** This model will label mislabel any other species of monkey, and has no label to indicate that it might be another species.

@@ -1,43 +1,37 @@
-# Datasheet Template
-
-As far as you can, complete the model datasheet. If you have got the data from the internet, you may not have all the information you need, but make sure you include all the information you do have. 
+# Datasheet
 
 ## Motivation
 
-- For what purpose was the dataset created? 
-- Who created the dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)? Who funded the creation of the dataset?
+This dataset seems to have been created as a learning tool. Though no clear indication as to the authors original intent.
 
  
 ## Composition
 
-- What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)? 
-- How many instances of each type are there? 
-- Is there any missing data?
-- Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by    doctor–patient confidentiality, data that includes the content of individuals’ non-public communications)?
+- Each instances represents a labelled image of a monkey of one of ten species.
+- There are approximately 1400 images in the dataset (Details of the breakdown are available in the monkey_labels.txt file included with the dataset)
+- There doesn't appear to be any missing data, and all of the classes have roughly the same quantity of images
+- There is no data included that could be considered confidential
 
 ## Collection process
 
-- How was the data acquired? 
-- If the data is a sample of a larger subset, what was the sampling strategy? 
-- Over what time frame was the data collected?
+- The data is scrapped from a google image search for each of the listed species of monkey
+- As this is a list of google results the dataset could technically be extended, but this dataset has not been sampled in any random way from a larger set.
+- This data was gathered in a single instance in 2017, and was updated once in 2018.
 
 ## Preprocessing/cleaning/labelling
 
-- Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remaining questions in this section. 
-- Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? 
+- No pre-processing or additional labelling was carried out on this dataset
  
 ## Uses
 
-- What other tasks could the dataset be used for? 
-- Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms? 
-- Are there tasks for which the dataset should not be used? If so, please provide a description.
+- This dataset is only useful in image classification tasks, it may useful for both broad and fine-grained classification tasks. This will depend on the granularity of classification required.
+- There is no sensitive data associated with the dataset, so there are no immediately obvious reasons to restrict its use.
 
 ## Distribution
 
-- How has the dataset already been distributed? 
-- Is it subject to any copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)?  
+- This dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/slothkong/10-monkey-species/data), and is published under the Public Domain.
 
 ## Maintenance
 
-- Who maintains the dataset?
+- There is no regular maintenance of this dataset
 

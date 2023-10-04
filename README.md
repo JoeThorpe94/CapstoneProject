@@ -1,24 +1,33 @@
-# PROJECT TITLE 
+# Monkey Classification
 
+The aim of this model is to classify images of monkeys into one of ten species. This will be a fine-grained classifier as it is aimed at differentiating between very similar objects, rather than very separate classes of object.
 
-## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
-100 words to explain what your project is about to a general audience. 
+The data or functinoality from this model are not particularly useful, this project is mainly focused on developing and understanding the method for creating a fine-grained classifier. These skills will be applicable to more industrially useful classifiers that I may develop in future.
 
 ## DATA
-A summary of the data you’re using, remembering to include where you got it and any relevant citations. 
+
+The dataset consists of pre-labelled images of monkeys. The dataset consists of two files, training and validation. Each folder contains 10 subforders labeled as n0~n9, each corresponding a species form Wikipedia's monkey cladogram. Images are 400x300 px or larger and JPEG format (almost 1400 images).
+
+This dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/slothkong/10-monkey-species/data). This dataset was constructed by pulling google search results for each of the monkey species.
+
+The dataset consists of two files, training and validation. Each folder contains 10 subforders labeled as n0~n9, each corresponding a species form Wikipedia's monkey cladogram. Images are 400x300 px or larger and JPEG format (almost 1400 images).
 
 ## MODEL 
-A summary of the model you’re using and why you chose it. 
 
-## HYPERPARAMETER OPTIMSATION
-Description of which hyperparameters you have and how you chose to optimise them. 
+The model is a CNN looselybased on the AlexNet architecture. It consists of two layers of Convolution-ReLU-MaxPooling, followed by a Convolution-ReLU-MaxPooling-Dropout (Dropout is included during training to reduce overfitting). This is finally flattened into two fully-connected layers.
+
+## HYPERPARAMETERS
+
+The primary hyper-parameters of the mode are:
+
+-**Learning rate**
+-**Image size** (The images in the training set are all of different resolutions, so had to be scaled to a uniform size to train the model. An optimal size was found to balance training cost and information loss of downscaling.)
+-**Batch size**
 
 ## RESULTS
-A summary of your results and what you can learn from your model 
 
-You can include images of plots using the code below:
-![Screenshot](image.png)
+The model achieved an accuracy of around 75%, with some species achieving a very high idnetification rate of 95%.
 
-## (OPTIONAL: CONTACT DETAILS)
-If you are planning on making your github repo public you may wish to include some contact information such as a link to your twitter or an email address. 
+![Confusion Matrix](conf.png)
 
+![Performance by species](perf.png)
